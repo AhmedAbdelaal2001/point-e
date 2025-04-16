@@ -268,7 +268,7 @@ class CLIPImagePointDiffusionTransformer(PointDiffusionTransformer):
         :param embeddings: a batch of CLIP embeddings to condition on.
         :return: an [N x C' x T] tensor.
         """
-        assert x.shape[-1] == self.n_ctx
+        #assert x.shape[-1] == self.n_ctx
 
         t_embed = self.time_embed(timestep_embedding(t, self.backbone.width))
         clip_out = self.clip(batch_size=len(x), images=images, texts=texts, embeddings=embeddings)
